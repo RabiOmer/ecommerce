@@ -1,0 +1,69 @@
+.main{
+    width: 500px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 10px 120px;
+    background-color: powderblue;
+}
+.main h1{
+    text-align: center;
+    padding-top: 30px;
+}
+.main label{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.main label{
+    margin: 20px;
+}
+.main button{
+    text-align: center;
+}
+.main .pageOne div{
+    width: 100%;
+    text-align: center;
+}
+button{
+    width: 100px;
+    height: 25px;
+    background-color: lawngreen;
+    border: 1px solid black;
+    border-radius: 15px;
+    cursor: pointer;
+}
+back{
+    background-color: red;
+}
+.btn button{
+    margin: 10px;
+}
+.email{
+    margin-left: 23px;
+}
+.main .pageTwo label{
+    display: inline;
+}
+.main .pageTwo >div{
+    margin: 10px;
+    width: 320px;
+}
+select{
+    width: 161px;
+}
+.main .pageTwo  input, select{
+    position: relative;
+    float: right;
+    right: 0px;
+}
+#box{
+    display: block;
+}
+#box input{
+    float: none;
+}
+.btn{
+    width: 100% !important;
+    text-align: center;
+}

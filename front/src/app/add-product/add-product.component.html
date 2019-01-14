@@ -1,0 +1,77 @@
+<div *ngIf="!editProduct else editmode">
+  <h1>Add Product</h1>
+<div class="form">
+  <label>Product Name : </label>
+  <input type ="text" [(ngModel)]="newProduct.name">
+</div>
+<div class="form">
+    <label>Catgory : </label>
+    <select [(ngModel)]="newProduct.catgorytemp">
+      <option value=''>Select</option>
+      <option *ngFor="let c of categories;">{{c.name}}</option>
+    </select>
+</div>
+<div class="form">
+    <label>Company : </label>
+    <input type ="text" [(ngModel)]="newProduct.company">
+</div>
+<div class="form">
+  <label>Price : </label>
+  <input type ="number" [(ngModel)]="newProduct.price">
+</div>
+<div class="form description">
+    <label>Description : </label>
+    <textarea type ="text" [(ngModel)]="newProduct.description"></textarea>
+</div>
+<div class="form">
+    <label>Img: </label>
+    <input type ="file" accept='image/*' (change)="OnfileSeleted($event)">
+    <div class="img"><img src="{{url}}"></div>
+</div>
+<div class="btn">
+  <button (click)="ValidateForm(false)">Add Product</button>
+  <P class="err"><span *ngFor="let e of err;">{{e}}, </span></P>
+</div>
+</div>
+<ng-template #editmode>
+    <div>
+        <h1>Edit Product</h1>
+        <div class="form">
+            <label>Product Name : </label>
+            <input type ="text" [(ngModel)]="editProduct.name">
+        </div>
+        <div class="form">
+            <label>Catgory : </label>
+            <select [(ngModel)]="newProduct.catgorytemp">
+                <option value='' selected>{{editProduct.catgory.name}}</option>
+                <option *ngFor="let c of categories;">{{c.name}}</option>
+            </select>
+        </div>
+        <div class="form">
+            <label>Company : </label>
+            <input type ="text" [(ngModel)]="editProduct.company">
+        </div>
+        <div class="form">
+            <label>Price : </label>
+            <input type ="number" [(ngModel)]="editProduct.price">
+        </div>
+        <div class="form description">
+            <label>Description : </label>
+            <textarea type ="text" [(ngModel)]="editProduct.description"></textarea>
+        </div>
+        <div class="form">
+            <label>Img: </label>
+            <input type ="file" accept='image/*' (change)="OnfileSeleted($event)">
+            <div *ngIf="url" class="img">
+                <img src="{{url}}">
+            </div>
+            <div *ngIf="!url" class="img">
+                    <img  src="http://localhost:4000/upload/{{editProduct.image}}">
+            </div>
+        </div>
+        <div class="btn">
+            <button (click)="ValidateForm(true)">Save</button>
+            <P class="err"><span *ngFor="let e of err;">{{e}}, </span></P>
+        </div>        
+    </div>
+</ng-template>

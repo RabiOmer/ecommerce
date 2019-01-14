@@ -1,0 +1,61 @@
+<div class="main">
+  <div class="pageOne" [class.hide]="page">
+      <h1>Registration step A</h1>
+      
+    <label>Email:
+        <input type="email" class="email" [(ngModel)]="tempUser.email" (keyup)="validEmail()">
+    </label>
+    <label>Password:
+        <input type="password" [(ngModel)]="tempUser.pass" (keyup)="validPass()">
+    </label>    
+    <label>Password:
+        <input type="password" [(ngModel)]="tempUser.passtwo" (keyup)="validPass()">
+    </label>
+    <div>
+        <button (click)="nextPage();">next</button>
+    </div>
+    <p class="err">{{err}}</p>
+  </div>
+
+  <div class="pageTwo" [class.hide]="!page">
+      <h1>Registration step B</h1>
+      <div>
+          <label>Name:</label>
+          <input type="Name" [(ngModel)]="tempUser.name">
+      </div>
+      <div>
+          <label>Last Name</label>
+          <input type="lastname" [(ngModel)]="tempUser.last_name">
+      </div>
+      <div>
+          <label>Phone:</label>
+          <input type="phone" (keyup)="validPhone()" [(ngModel)]="tempUser.phone">
+      </div>
+      <div>
+          <label>City:</label>
+          <select [(ngModel)]="tempUser.city">
+            <option value="null">Select City</option>
+              <option value="Jerusalem">Jerusalem</option>
+              <option value="Tel Aviv">Tel Aviv</option>
+              <option value="Haifa">Haifa</option>
+              <option value="Rishon Le Zion">Rishon Le Zion</option>
+              <option value="Holon">Holon</option>
+              <option value="herzliya">herzliya</option>
+              <option value="Ranana">Ranana</option>
+              <option value="Petah Tikva">Petah Tikva</option>
+              <option value="Tveria">Tveria</option>
+              <option value="Beer Sheba">Beer Sheba</option>
+            </select>
+      </div>
+      <div>
+          <label>Street:</label>
+          <input type="street" [(ngModel)]="tempUser.street">
+      </div>
+      <div class="btn">   
+        <button (click)="page = !page" class='back'>previous</button>
+        <button (click)="SubmitUSer()">Done!</button>
+      </div>
+      {{err}}
+  </div>
+
+</div>

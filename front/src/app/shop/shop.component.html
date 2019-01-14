@@ -1,0 +1,35 @@
+<button class="btncart" *ngIf="cartSize" (click)="cartSize = !cartSize">Open Cart</button>
+<button class="btncart" *ngIf="!cartSize" (click)="cartSize = !cartSize">Close Cart </button>
+<div class="main">
+  <div [class.hide]="cartSize" class="cart">
+    <app-cart></app-cart>
+  </div>
+  <div  class="shop" [class.bigger]="cartSize">
+    <app-pro-shop (fromProShop)="selectedProduct($event)"></app-pro-shop>
+  </div>
+</div>
+<div class="popup" *ngIf="AddProduct">
+  <div class="close" (click)="AddProduct = null">X</div>
+  <div class="clearfix"></div>
+  <div>
+    <h3>Name: {{AddProduct.name}}</h3>
+    <p>Catgory: {{AddProduct.catgory.name}} </p>
+    <p>Company: {{AddProduct.company}}</p>
+    <p>Description: {{AddProduct.description}}</p>
+    <p>Price: {{AddProduct.price}}</p>
+    <label>
+      Amount you want: 
+      <select [(ngModel)]="AddToCart">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+    </label>
+  </div>
+  <div class="img">
+    <img src="http://localhost:4000/upload/{{AddProduct.image}}">
+  </div>
+  <div class="btn"><button (click)="AddProduct = null">Go back</button><button (click)="AddProductToCart()">Add To Cart</button></div>
+</div>

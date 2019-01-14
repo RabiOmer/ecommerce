@@ -1,0 +1,46 @@
+<div id="main">
+  <div id="log" *ngIf="!logged.user.token; else loggeduser;">
+      <h1>Registered?</h1>
+      <input type="email" placeholder="Email" [(ngModel)]="templogged.email">
+      <input type="password" placeholder="Password" [(ngModel)]="templogged.password" (keydown.enter)="dologin()">
+      <div>
+        <button (click)="dologin()">Login</button>
+        <a routerLink="register">Sign Up</a>
+      </div>
+  </div>
+  <ng-template #loggeduser>
+<div *ngIf="this.logged.user.user.role != 'admin'">
+  <p *ngIf="logged.user.cart.products.length > 0 "> You have {{logged.user.cart.products.length}} items in the cart</p>
+  <a  *ngIf="logged.user.cart.products.length >= 1" routerLink="/store">Resume Shopping</a>
+  <a *ngIf="logged.user.cart.products.length == 0 " routerLink="/store"> Start Shopping</a>
+</div>
+  </ng-template>
+  <div class="why">
+    <h1>Why should you buy here?</h1>
+    <ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta velit ad hic nobis in rem odio, nisi sequi. Vel minus dolor natus et inventore similique provident asperiores exercitationem voluptatibus eos.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta velit ad hic nobis in rem odio, nisi sequi. Vel minus dolor natus et inventore similique provident asperiores exercitationem voluptatibus eos.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta velit ad hic nobis in rem odio, nisi sequi. Vel minus dolor natus et inventore similique provident asperiores exercitationem voluptatibus eos.
+    </p>
+      <img src="/../assets/del.png">
+    </ul>
+  </div>
+  <div id="more">
+    <div class="more">
+      <h1>Newest Product</h1>
+      <h2>{{product.name}}</h2>
+      <img src="http://localhost:4000/upload/{{product.image}}">
+      <div *ngIf="logged.user.token">
+          <p>hey {{logged.user.user.name}},</p>
+          <p *ngIf="totalProducts != null">We have {{totalProducts}} products in the store</p>
+          <p *ngIf="totalorders != null" >And we have more then {{totalorders}} orders!</p>
+          <div *ngIf="logged.user.user.role != 'admin'">
+            <p *ngIf="logged.user.cart.products.length > 0">you have a cart open from {{logged.user.cart.date}}</p>
+            <p *ngIf="paidCarts.length > 0 ">Your last purchase was on {{paidCarts.date}}</p> 
+          </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+

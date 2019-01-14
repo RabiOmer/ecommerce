@@ -1,0 +1,49 @@
+.mark, .mark1{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.hide, .hide1{
+    visibility: hidden;
+}
+.form{
+    width: 300px;
+    margin: 10px;
+}
+.form input ,textarea, select{
+    position: relative;
+    float: right;
+}
+select{
+    width: 173px;
+}
+textarea{
+    width: 171px;
+    resize: none;
+}
+.description{
+    height: 40px;
+}
+.btn{
+    width: 100%;
+    text-align: center;
+}
+
+.img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    float: right;
+    right: 0px;
+    top: 0px;
+    border: 1px solid black;
+    background-color: black;
+}
+.img img{
+    width: 100px;
+    height: 100px;
+}
+.err{
+    font-size: 15px;
+    color:red;
+}

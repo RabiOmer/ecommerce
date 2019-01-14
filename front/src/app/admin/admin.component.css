@@ -1,0 +1,41 @@
+.adminpage > div{
+    position: relative;
+    float: left;
+    height: 500px;
+    background-color: powderblue;
+}
+.sidebar{
+    width: 29.6%;
+}
+.mainbox{
+    width: 70%;
+}
+.mainbox .nav ul, .sidebar ul{
+    list-style: none;
+}
+.mainbox .nav ul li, .sidebar ul li{
+    position: relative;
+    float: left;
+    margin: 5px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    height: 10px;
+}
+.product{
+    overflow: hidden;
+    overflow-y: auto;
+    height: 80%;
+}
+@media only screen and (max-width: 1350px) {
+    .sidebar{
+        width: 40%;
+    }
+    .mainbox{
+        width: 60%;
+    }
+}

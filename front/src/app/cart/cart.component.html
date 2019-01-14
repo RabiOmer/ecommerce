@@ -1,0 +1,26 @@
+<div>
+<div>
+    <h1>My Cart</h1>
+    <p>Total items: {{UserCart.obj.products.length}} </p>
+</div>
+</div>
+<div class="cartnav">
+    <table>
+        <tr>
+            <th>img</th>
+            <th>name</th>
+            <th>price</th>
+            <th>amount</th>
+            <th>delete</th>
+          </tr>
+          <tr *ngFor="let u of UserCart.obj.products; index as i;">
+              <td><img src="http://localhost:4000/upload/{{u.pro_id.image}}"></td>
+              <td>{{u.pro_id.name}}</td>
+              <td>{{u.pro_id.price}}$</td>
+              <td><button (click)="UpdateAmount(i,-1)">-</button>{{u.amount}}<button (click)="UpdateAmount(i,+1)">+</button></td>
+              <td (click)="deleteFromCart(i)">X</td>
+            </tr>
+    </table>
+</div>
+<p>Total Cost: {{UserCart.cost}}$</p>
+<button (click)="deleteFromCart(-1)">Clear Cart</button><a routerLink="/order">Order now!</a>

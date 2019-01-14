@@ -1,0 +1,73 @@
+<div class="main" *ngIf="!PayPOP; else POPCon">
+  <div class="cart">
+    <div>
+        <h1>My cart</h1><a  class="back" routerLink="/store">Back to shop</a>
+      </div>
+      <div class="tableS">
+      <table>
+        <tr>
+          <th>img</th>
+          <th>name</th>
+          <th>price</th>
+          <th>amount</th>
+        </tr>
+        <tr *ngFor="let u of UserCart.obj.products; index as i;">
+          <td><img src="http://localhost:4000/upload/{{u.pro_id.image}}"></td>
+          <td>{{u.pro_id.name}}</td>
+          <td>{{u.pro_id.price}}$</td>
+          <td>{{u.amount}}</td>
+        </tr>
+      </table>
+    </div>
+    <p>Total Cost: {{UserCart.cost}}$</p>
+  </div>
+  <div class="order">
+    <h1>Paymnent</h1>
+      <div>
+          <label>Phone:</label>
+          <input (dblclick)="tempbill.phone=billing.phone" type="phone" [(ngModel)]="tempbill.phone">
+      </div>
+      <div>
+          <label>City:</label>
+          <select (dblclick)="tempbill.city=billing.city" [(ngModel)]="tempbill.city">
+            <option value="null">Select City</option>
+              <option value="Jerusalem">Jerusalem</option>
+              <option value="Tel Aviv">Tel Aviv</option>
+              <option value="Haifa">Haifa</option>
+              <option value="Rishon Le Zion">Rishon Le Zion</option>
+              <option value="Holon">Holon</option>
+              <option value="herzliya">herzliya</option>
+              <option value="Ranana">Ranana</option>
+              <option value="Petah Tikva">Petah Tikva</option>
+              <option value="Tveria">Tveria</option>
+              <option value="Beer Sheba">Beer Sheba</option>
+            </select>
+      </div>
+      <div>
+          <label>Street:</label>
+          <input type="street" (dblclick)="tempbill.street=billing.street" [(ngModel)]="tempbill.street">
+      </div>
+      <div>
+          <label>Date:</label>
+          <select  [(ngModel)]="tempbill.date" (change)="validDate()">
+              <option *ngFor="let w of week">{{w}}</option>
+          </select>
+      </div>
+      <div>
+        <h4>payment</h4>
+          <label>MasterCard</label>
+          <input type="text" [(ngModel)]="tempbill.card" (keyup)="validCard()">
+      </div>
+      <div class="pay">
+          <button (click)="ValidForm()">Pay</button>
+      </div>
+  </div>
+</div>
+<ng-template #POPCon>
+<div class="float">
+    <h1>תודה על קנייתך</h1>
+    <button (click)="goHome()">אישור</button>
+     <a href="textFile.value">להורדת החשבונית</a>
+</div>
+</ng-template>
+

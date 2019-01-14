@@ -1,0 +1,25 @@
+table{
+    text-align: center;
+}
+table th{
+width: 50px;
+}
+img{
+    width: 25px;
+    height: 25px;
+}
+.cartnav > div{
+    position: relative;
+}
+.cartnav > div:nth-child(2){
+    float: right;
+    top: -56px;
+}
+.cartnav{
+    height: 70%;
+    height: 70%;
+    border: 2px solid black;
+    margin: 11px;
+    overflow: hidden;
+    overflow-y: auto;
+}

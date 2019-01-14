@@ -1,0 +1,23 @@
+<div id="main">
+  <div class="adminpage">
+    <div class="sidebar">
+        <ul>
+            <li  (click)="showSideBar(true)">Add Product</li>
+        </ul>
+        <div class="clearfix"></div>
+        <div>
+          <app-add-product [editProduct]="productEdit" *ngIf="sideBar"></app-add-product>
+        </div>
+    </div>
+    <div class="mainbox">
+      <div class="nav">
+        <ul>
+          <li>all Products</li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+      <app-products (fromProduct)="selectedProduct($event)"></app-products>
+    </div>
+  </div>
+
+</div>

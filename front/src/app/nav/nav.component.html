@@ -1,0 +1,13 @@
+
+<div>
+<div class="img"></div>
+<div class="user">
+    <h3>Store Info</h3>
+    <p>Email: Shop@gmail.com</p>
+    <p>Phone: 03-95225222</p>
+    <p *ngIf="!logged.user.token">Hello Guest</p>
+    <p *ngIf="logged.user.token">Hello {{logged.user.user.name}}</p>
+    <a href="#" *ngIf="logged.user.token" (click)="logout()">Logout</a> 
+</div>
+</div>
+<div class="clearfix"></div>

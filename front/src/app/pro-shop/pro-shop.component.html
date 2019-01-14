@@ -1,0 +1,25 @@
+<div class="navCatgory">
+    <ul>
+        <li> <label>Search Product <input type="text" placeholder="Product Name" [(ngModel)]="Search"></label></li>
+        <li *ngFor="let c of catgoreis" (click)="getProducts(c._id)">{{c.name}}</li>
+    </ul>
+</div>
+<div class="clearfix"></div>
+<div *ngIf="Search == null || Search == ''; else allpro">
+    <div class="product" *ngFor="let p of productByCatgory.obj" (click)="sendToPopUp(p)">
+        <img src="http://localhost:4000/upload/{{p.image}}">
+        <h4>{{p.name}}</h4>
+        <p>Price: {{p.price}}$</p>
+        <p>{{p.discription}}</p>
+    </div>
+</div>
+<ng-template #allpro> 
+    <div>
+        <div class="product" *ngFor="let p of allProduct.obj | productFilter: Search" (click)="sendToPopUp(p)">
+            <img src="http://localhost:4000/upload/{{p.image}}">
+            <h4>{{p.name}}</h4>
+            <p>Price: {{p.price}}$</p>
+            <p>{{p.discription}}</p>
+        </div>
+    </div>
+</ng-template>

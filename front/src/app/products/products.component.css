@@ -1,0 +1,19 @@
+img{
+    width: 50px;
+    height: 50px;
+}
+.des{
+    width: 200px;
+    height: 70px;
+}
+table{
+    text-align: center;
+}
+td,th {
+    border-bottom: 1px solid black;
+}
+.product{
+    height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+}

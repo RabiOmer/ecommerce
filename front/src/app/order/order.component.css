@@ -1,0 +1,81 @@
+img{
+    width: 25px;
+    height: 25px;
+}
+.main{
+    width: 768px;
+    text-align: center;
+    margin: 0 auto;
+}
+.main >div{
+    position: relative;
+    float: left;
+    width: 50%;
+    margin: 0 auto;
+}
+.float{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom:0;
+    margin: auto;
+    background-color: gray;
+    text-align: center;
+}
+.cart{
+    background: aqua;
+    height: 80vh;
+    border-radius: 95px 0px 0px 0px;
+    
+}
+td{
+    border-bottom: 1px solid black;
+}
+.cart h1{
+    border-bottom: 1px solid black;
+    display: inline;
+}
+.back{
+    position: relative;
+    float: right;
+}
+.tableS{
+    height: 460px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 2px solid;
+    margin: 15px;
+    padding: 11px;
+}
+.order{
+    height: 80vh;
+    background-color: skyblue;
+    border-radius: 0px 95px 0px 0px;
+}
+.order > div{
+    width: 300px;
+    margin: 10px;
+
+}
+.order div input ,select{
+    position: relative;
+    float: right;
+    
+}
+select{
+    width: 160px;
+}
+.pay{
+    width: 100%;
+    text-align: center;
+}
+button{
+    border: 2px solid black;
+    width: 114px;
+    border-radius: 21px;
+    background-color: lawngreen;
+    cursor: pointer;
+}

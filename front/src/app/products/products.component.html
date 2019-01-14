@@ -1,0 +1,23 @@
+<div class="product">
+    <label>Search Product <input type="text" placeholder="Product Name" [(ngModel)]="Search"></label>{{Search}}
+  <table>
+    <tr>
+      <th>img</th>
+      <th>name</th>
+      <th>catgory</th>
+      <th>company</th>
+      <th>description</th>
+      <th>price</th>
+      <th>date</th>
+    </tr>
+    <tr *ngFor="let p of products.obj | productFilter: Search" (click)="editProduct(p)">
+      <td><img src="http://localhost:4000/upload/{{p.image}}"></td>
+      <td>{{p.name}}</td>
+      <td>{{p.catgory.name}}</td>
+      <td>{{p.company}}</td>
+      <td class="des">{{p.description}}</td>
+      <td>{{p.price}}$</td>
+      <td>{{p.date}}</td>
+    </tr>
+  </table>
+</div>

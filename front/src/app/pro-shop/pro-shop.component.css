@@ -1,0 +1,28 @@
+ul{
+    list-style: none;;
+}
+ul li{
+    position: relative;
+    float: left;
+    margin: 5px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.product{
+    position: relative;
+    float: left;
+    cursor: pointer;
+    width: 125px;
+    margin: 5px;
+    text-align: center;
+}
+.product img{
+    width: 100px;
+    height: 100px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    height: 5px;
+}

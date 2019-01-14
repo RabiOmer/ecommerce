@@ -1,0 +1,93 @@
+.main > div{
+    position: relative;
+    float: left;
+    border: 3px solid black;
+}
+.cart{
+    width: 20%;
+    height: 80vh;
+    background-color: powderblue;
+}
+.shop{
+    width: 79%;
+    height: 80vh;
+    background-color: antiquewhite;
+}
+.popup{
+    width: 500px;
+    height: 236px;
+    background-color: cadetblue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid black;
+    padding: 24px;
+    border-radius: 38px;
+}
+.popup h3{
+    border-bottom: 2px solid;
+    margin-bottom: 6px;
+}
+.popup button{
+    margin: 10px;
+}
+.btncart{
+    border-radius: 9px;
+    border: 1px solid black;
+    width: 118px;
+    background-color: darkviolet;
+    cursor: pointer;
+    color: white;
+}
+.close{
+    background-color: white;
+    height: 17px;
+    width: 14px;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    text-align: center;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    height: 5px;
+}
+.img{
+    position: relative;
+    float: right;
+}
+.img img{
+    width: 100px;
+    height: 100px;
+}
+.btn{
+    position: relative;
+    bottom: -44px;
+}
+@media only screen and (max-width: 1130px) {
+    .cart{
+        width: 25%;
+    }
+    .shop{
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 8120px) {
+    .cart{
+        width: 30%;
+    }
+    .shop{
+        width: 69%;
+    }
+}
+.hide{
+    display: none;
+}
+.bigger{
+    width: 100%;
+}
